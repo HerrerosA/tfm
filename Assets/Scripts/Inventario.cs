@@ -13,9 +13,8 @@ public class Inventario : MonoBehaviour
     void Start(){
         InicializarInventario();
     }
-    void Update(){
-        SeleccionarHueco();
-    }
+    
+    
     void InicializarInventario(){
         huecos = GameObject.Find("Huecos");
         foreach (Transform hueco in huecos.transform)
@@ -27,18 +26,9 @@ public class Inventario : MonoBehaviour
             image.color = transparencia;
             hueco.GetComponent<Hueco>().propiedadesObjeto = Hueco.property.vacio;
         }
-        huecoActualSeleccionado = GameObject.Find("Hueco (1)");
+        huecoActualSeleccionado = null;
         huecoPrevioSeleccionado = huecoActualSeleccionado;
     }
-    void SeleccionarHueco(){
-        foreach (Transform hueco in huecos.transform)
-        {
-            if(hueco.gameObject == huecoActualSeleccionado && hueco.GetComponent<Hueco>().propiedadesObjeto == Hueco.property.usable)
-            {
-                /*TODO: hacer que se vea seleccionado el objeto */
-                //hueco.GetComponent<Image>().color = new Color(.5f, 0f, 0.1f, 1);
-            }
-           
-        }
-    }
+    
+    
 }

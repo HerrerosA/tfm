@@ -17,23 +17,41 @@ public class Hueco : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData eventData){
-        inventario.GetComponent<Inventario>().huecoPrevioSeleccionado = inventario.GetComponent<Inventario>().huecoActualSeleccionado;
-        inventario.GetComponent<Inventario>().huecoActualSeleccionado = this.gameObject;
-        Combinar();
+        if (this.propiedadesObjeto == property.usable){
+            inventario.GetComponent<Inventario>().huecoPrevioSeleccionado = inventario.GetComponent<Inventario>().huecoActualSeleccionado;
+            inventario.GetComponent<Inventario>().huecoActualSeleccionado = this.gameObject;
+            Seleccionar();
+        }
     }
     public void AsignarPropiedad(int numeroOrden, string combinacionObjeto){
         propiedadesObjeto = (property)numeroOrden;
         this.combinacionObjeto = combinacionObjeto;
     }
-    void Combinar(){
-        if(inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>().combinacionObjeto == this.gameObject.GetComponent<Hueco>().combinacionObjeto && this.gameObject.GetComponent<Hueco>().combinacionObjeto != ""){
-            GameObject objetoCombinado = Instantiate(Resources.Load<GameObject>("Combinados/" + combinacionObjeto));
-            objetoCombinado.GetComponent<CogerObjeto>().ObjetoCogido();
-            inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>().VaciarHueco();
-            VaciarHueco();
-
+    void Seleccionar(){
+        SeleccionarHueco();
+        if (inventario.GetComponent<Inventario>().huecoPrevioSeleccionado!= null){
+            if(inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>().combinacionObjeto == this.gameObject.GetComponent<Hueco>().combinacionObjeto && this.gameObject.GetComponent<Hueco>().combinacionObjeto != ""){
+                GameObject objetoCombinado = Instantiate(Resources.Load<GameObject>("Combinados/" + combinacionObjeto));
+                objetoCombinado.GetComponent<CogerObjeto>().ObjetoCogido();
+                inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>().VaciarHueco();
+                VaciarHueco();
+            }
         }
+        
     }
+    void SeleccionarHueco(){
+        var colorObjeto = this.GetComponent<Image>().color;
+        if (inventario.GetComponent<Inventario>().huecoPrevioSeleccionado == this.gameObject){
+                inventario.GetComponent<Inventario>().huecoPrevioSeleccionado = inventario.GetComponent<Inventario>().huecoActualSeleccionado = null;
+                colorObjeto.a = 1.0f;
+            }
+        else{
+                colorObjeto.a = 0.5f;
+            }
+        this.GetComponent<Image>().color = colorObjeto;
+        
+    }
+
     public void VaciarHueco(){
         propiedadesObjeto = Hueco.property.vacio;
         combinacionObjeto = "";

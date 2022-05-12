@@ -20,6 +20,9 @@ public class ObjetoInteractivo : MonoBehaviour, IUsable
         ObjetoAcceso.SetActive(false);
     }
     public void Interactuar(ImagenFondo fondoActual){
+        if (inventario.GetComponent<Inventario>().huecoActualSeleccionado == null && ObjetoDesbloqueo != ""){
+            return;
+        }
         if(inventario.GetComponent<Inventario>().huecoActualSeleccionado.gameObject.transform.GetComponent<Image>().sprite.name == ObjetoDesbloqueo || ObjetoDesbloqueo == ""){
             this.gameObject.SetActive(false);
             var nombre = this.gameObject.name;
