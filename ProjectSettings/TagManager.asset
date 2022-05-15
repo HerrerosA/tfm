@@ -7,6 +7,7 @@ TagManager:
   - Interactivo
   - Navegacion
   - Acercamiento
+  - Minijuego
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Playa1
-  - Playa2
-  - Playa3
-  - Playa4
+  - Buzones1
+  - Buzones2
+  - Buzones3
+  - Buzones4
   - Roca1
   - 
   - 
