@@ -23,7 +23,10 @@ public class GameplayManager : MonoBehaviour
 
             }
         }
+        
     }
+    
+    
     void Update(){
         capaActual = LayerMask.NameToLayer(botonesCanvas.fondoActual.GetComponent<SpriteRenderer>().sprite.name.ToString());
         if (Input.GetMouseButtonUp(0)){
@@ -38,15 +41,13 @@ public class GameplayManager : MonoBehaviour
             }
             if(choque && choque.transform.tag == "Minijuego" && choque.transform.gameObject.layer == capaActual){
                 var nombreminijuego = choque.transform.gameObject.name.ToString();
-                Debug.Log(nombreminijuego);
                 foreach (GameObject minijuego in minijuegos){
-                    Debug.Log(minijuego.name);
                     if(minijuego.name == nombreminijuego.Substring(2, nombreminijuego.Length - 2)){
                         botonesCanvas.AbrirMinijuego(minijuego);
                     }
                 }
             }
-            if(!botonesCanvas.minijuegoEnUso){
+            if(!botonesCanvas.minijuegoEnUso && GameObject.Find("Escenarios")){
                 var tipoCapa = GameObject.Find(botonesCanvas.fondoActual.FondoActual).transform.tag;
                 if (tipoCapa == "Acercamiento" && !botonesCanvas.mochilaEnUso){
                     botonesCanvas.direccion.SetActive(false);

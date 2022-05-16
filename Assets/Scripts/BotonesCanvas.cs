@@ -20,7 +20,6 @@ public class BotonesCanvas : MonoBehaviour
     private GameObject escenarios;
     
     
-
     /* Se carga el fondo actual */
     void Start(){
         fondoActual = GameObject.Find("Fondo").GetComponent<ImagenFondo>();
@@ -33,7 +32,7 @@ public class BotonesCanvas : MonoBehaviour
         movilEncendido = GameObject.Find("Smartphone");
         movilEncendido.SetActive(false);
         direccion = GameObject.Find("Direccion");
-        direccion.SetActive(true);
+        direccion.SetActive(false);
         atras = GameObject.Find("IrAtras");
         atras.SetActive(false);
         mochilaEnUso = false;
@@ -58,17 +57,21 @@ public class BotonesCanvas : MonoBehaviour
             fondoActual.FondoActual = fondoActual.FondoActual.Remove(fondoActual.FondoActual.Length -1, 1) + numero;
         }
     }
+    public void IrLugar(){
+        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="01/01/2022 00:00"){
+            fondoActual.FondoActual= "Buzones1";
+            IrAtras();
+            IrAtras();
+        }
+    }
     public void IrAtras(){
         if (movilEnUso == true){
-            movilEnUso = false;
             CerrarSmartphone();
         }
         else if (mochilaEnUso == true){
-            mochilaEnUso = false;
             CerrarMochila();
         }
         else if(minijuegoEnUso == true){
-            minijuegoEnUso = false;
             CerrarMinijuego();
         }
     }
@@ -78,20 +81,23 @@ public class BotonesCanvas : MonoBehaviour
         mochila.SetActive(false);
         direccion.SetActive(true);
         movilEncendido.SetActive(false);
+        escenarios.SetActive(false);
         mochilaAbierta.alpha = 1;
         mochilaAbierta.interactable = true;
         mochilaAbierta.blocksRaycasts = true;
         mochilaEnUso = true;
     }
     public void CerrarMochila(){
+        atras.SetActive(false);
         inventario = false;
         mochila.SetActive(true);
         direccion.SetActive(true);
         movilEncendido.SetActive(false);
-        atras.SetActive(false);
+        escenarios.SetActive(true);
         mochilaAbierta.alpha = 0;
         mochilaAbierta.interactable = false;
         mochilaAbierta.blocksRaycasts = false;
+        mochilaEnUso = false;
     }
     public void PulsarSmartphone(){
         mochila.SetActive(false);
@@ -109,26 +115,27 @@ public class BotonesCanvas : MonoBehaviour
         mochilaAbierta.alpha = 1;
         mochilaAbierta.interactable = true;
         mochilaAbierta.blocksRaycasts = true;
-
+        movilEnUso = false;
     }
     public void AbrirMinijuego(GameObject minijuego){
+        atras.SetActive(true);
+        mochila.SetActive(false);
+        direccion.SetActive(false);
+        escenarios.SetActive(false);
         minijuego.SetActive(true);
         minijuegoAbierto = minijuego;
         minijuegoEnUso = true;
-        mochila.SetActive(false);
-        direccion.SetActive(false);
-        atras.SetActive(true);
-        escenarios.SetActive(false);
     }
     public void CerrarMinijuego(){
         if (minijuegoAbierto!= null){
             minijuegoAbierto.SetActive(false);
         }
+        atras.SetActive(false);
         mochila.SetActive(true);
         direccion.SetActive(true);
-        atras.SetActive(false);
-        minijuegoAbierto = null;
         escenarios.SetActive(true);
+        minijuegoAbierto = null;
+        minijuegoEnUso = false;
     }
     
 }
