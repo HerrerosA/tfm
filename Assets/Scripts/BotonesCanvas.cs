@@ -58,7 +58,7 @@ public class BotonesCanvas : MonoBehaviour
         }
     }
     public void IrLugar(){
-        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="01/01/2022 00:00"){
+        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="15/04/2022 17:32"){
             fondoActual.FondoActual= "Buzones1";
             IrAtras();
             IrAtras();
