@@ -60,6 +60,7 @@ public class Smartphone : MonoBehaviour
         InputField fecha = GameObject.Find("FechaIntroducir").GetComponent<InputField>();
         InputField hora = GameObject.Find("HoraIntroducir").GetComponent<InputField>();
         fechaSeleccionada = fecha.text + " " + hora.text;
+        MostrarPortada();
     }
     
     public void MostrarPortada(){
