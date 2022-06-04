@@ -7,11 +7,13 @@ public class GameplayManager : MonoBehaviour
     public List<string> capas;
     public List<GameObject> minijuegos;
     private BotonesCanvas botonesCanvas;
+    public Smartphone smartphone;
     private int capaActual;
     private List<int> capasId = new List<int>();
     public Camera cam;
     void Start(){
         botonesCanvas = GameObject.Find("Canvas").GetComponent<BotonesCanvas>();
+        smartphone = GameObject.Find("Smartphone").GetComponent<Smartphone>();
         foreach (string capa in capas){
             if (capa !=  null){
                 capasId.Add(LayerMask.NameToLayer(capa));
@@ -23,6 +25,7 @@ public class GameplayManager : MonoBehaviour
 
             }
         }
+        smartphone.NoLeido=true;
         
     }
     

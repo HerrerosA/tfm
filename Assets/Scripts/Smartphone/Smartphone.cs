@@ -7,13 +7,21 @@ using TMPro;
 
 public class Smartphone : MonoBehaviour
 {
+    public bool NoLeido{
+        get { return noLeido; }
+        set{
+            noLeido = value;
+        }
+    }
     private GameObject chats;
     private GameObject lista_chats;
     private GameObject chat_anonimo;
     private GameObject mapa;
     private GameObject calendario;
     private GameObject portada;
+    private bool noLeido;
     public string fechaSeleccionada= "";
+    [SerializeField] public GameObject[] notificaciones;
 
     System.DateTime myTime =  System.DateTime.Now;
     public TextMeshProUGUI reloj;
@@ -37,16 +45,23 @@ public class Smartphone : MonoBehaviour
     {
         myTime =  System.DateTime.Now;
         reloj.text = myTime.ToString("HH:mm");
+        foreach (GameObject notificacion in notificaciones){
+            notificacion.SetActive(noLeido);
+        }
+            
+        
     }
 
     
     public void MostrarListaChats(){
+        
         portada.SetActive(false);
         chats.SetActive(true);
         chat_anonimo.SetActive(false);
         lista_chats.SetActive(true);
     }
     public void AbrirChatAnonimo(){
+        noLeido = false;
         chat_anonimo.SetActive(true);
         lista_chats.SetActive(false);
     }

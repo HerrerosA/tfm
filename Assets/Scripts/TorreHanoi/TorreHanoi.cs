@@ -33,9 +33,11 @@ public class TorreHanoi : MonoBehaviour
                     }
                 }
                 else{
-                    discoEspera = estePalo.discos[estePalo.discos.Count - 1];
-                    discoEspera.posicionDestino = posicionEspera;
-                    estePalo.QuitarDisco();
+                    if(estePalo.discos.Count>0){
+                        discoEspera = estePalo.discos[estePalo.discos.Count - 1];
+                        discoEspera.posicionDestino = posicionEspera;
+                        estePalo.QuitarDisco();
+                    }
 
                 }
             }
