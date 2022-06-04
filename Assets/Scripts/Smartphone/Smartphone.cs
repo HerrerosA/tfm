@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Globalization;
 
 public class Smartphone : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Smartphone : MonoBehaviour
 
     System.DateTime myTime =  System.DateTime.Now;
     public TextMeshProUGUI reloj;
+    public TextMeshProUGUI fecha;
+    public TextMeshProUGUI hora;
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,8 +46,18 @@ public class Smartphone : MonoBehaviour
     }
     void Update()
     {
-        myTime =  System.DateTime.Now;
-        reloj.text = myTime.ToString("HH:mm");
+        if (fechaSeleccionada==""){
+            myTime =  System.DateTime.Now;
+            hora.text = myTime.ToString("HH:mm");
+            fecha.text = myTime.ToString("D", CultureInfo.CreateSpecificCulture("es-ES"));
+        }
+        else{
+            DateTime fechaHora;
+            DateTime.TryParse(fechaSeleccionada, out fechaHora);
+            hora.text = fechaHora.ToString("HH:mm");
+            fecha.text = fechaHora.ToString("D", CultureInfo.CreateSpecificCulture("es-ES"));
+        }
+        
         foreach (GameObject notificacion in notificaciones){
             notificacion.SetActive(noLeido);
         }
