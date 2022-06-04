@@ -57,12 +57,28 @@ public class BotonesCanvas : MonoBehaviour
             fondoActual.FondoActual = fondoActual.FondoActual.Remove(fondoActual.FondoActual.Length -1, 1) + numero;
         }
     }
-    public void IrLugar(){
+    public void IrBosque(){
         if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="15/04/2022 17:32"){
             fondoActual.FondoActual= "Buzones1";
-            IrAtras();
-            IrAtras();
+            
         }
+        else{
+            fondoActual.FondoActual= "Bosque";
+        }   
+        IrAtras();
+        IrAtras();
+    }
+    public void IrPlaya(){
+        // Se tiene que poner la fecha correcta y el escenario correcto
+        fondoActual.FondoActual= "Playa";   
+        IrAtras();
+        IrAtras();
+    }
+    public void IrColina(){
+        // Se tiene que poner la fecha correcta y el escenario correcto
+        fondoActual.FondoActual= "Colina";
+        IrAtras();
+        IrAtras();
     }
     public void IrAtras(){
         if (movilEnUso == true){

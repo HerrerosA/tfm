@@ -1849,6 +1849,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218240357}
   m_CullTransparentMesh: 1
+--- !u!1 &231798066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231798067}
+  m_Layer: 30
+  m_Name: Bosque
+  m_TagString: Acercamiento
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &231798067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231798066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.81, y: -0.06500006, z: 3.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1842174586}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237680896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,7 +3950,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2049595641}
         m_TargetAssemblyTypeName: BotonesCanvas, Assembly-CSharp
-        m_MethodName: IrLugar
+        m_MethodName: IrBosque
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4382,6 +4412,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &648070584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648070585}
+  m_Layer: 30
+  m_Name: Colina
+  m_TagString: Acercamiento
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648070585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648070584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.81, y: -0.06500006, z: 3.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1842174586}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650011633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6352,6 +6412,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &822528038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4883747705340401257, guid: c443d12fac76ad5419ad396856bd5831, type: 3}
+  m_PrefabInstance: {fileID: 4883747705957718391}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135723807}
+  m_Layer: 0
+  m_Name: 'Guante (Missing Prefab with guid: c443d12fac76ad5419ad396856bd5831)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &826847114
 GameObject:
   m_ObjectHideFlags: 0
@@ -10945,6 +11021,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b96e505f346f043ad5312440a90382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1330290371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330290372}
+  m_Layer: 30
+  m_Name: Playa
+  m_TagString: Acercamiento
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330290372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330290371}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.81, y: -0.06500006, z: 3.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1842174586}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346201262
 GameObject:
   m_ObjectHideFlags: 0
@@ -11520,7 +11626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1407885174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2049595641}
+        m_TargetAssemblyTypeName: BotonesCanvas, Assembly-CSharp
+        m_MethodName: IrPlaya
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1407885174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11750,7 +11868,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436647914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2049595641}
+        m_TargetAssemblyTypeName: BotonesCanvas, Assembly-CSharp
+        m_MethodName: IrColina
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1436647914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14678,6 +14808,9 @@ Transform:
   - {fileID: 29646015}
   - {fileID: 575578898}
   - {fileID: 1832849780}
+  - {fileID: 231798067}
+  - {fileID: 1330290372}
+  - {fileID: 648070585}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16659,11 +16792,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108290547}
   m_CullTransparentMesh: 1
---- !u!4 &2135723807 stripped
+--- !u!4 &2135723807
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4883747705340401256, guid: c443d12fac76ad5419ad396856bd5831, type: 3}
   m_PrefabInstance: {fileID: 4883747705957718391}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822528038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1210992908}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4883747705957718391
 PrefabInstance:
   m_ObjectHideFlags: 0
