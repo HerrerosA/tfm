@@ -41,7 +41,6 @@ public class Hueco : MonoBehaviour, IPointerClickHandler
         this.combinacionObjeto = combinacionObjeto;
     }
     void Seleccionar(){
-        
         if (inventario.GetComponent<Inventario>().huecoPrevioSeleccionado!= null){
             if(inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>().combinacionObjeto == this.gameObject.GetComponent<Hueco>().combinacionObjeto && this.gameObject.GetComponent<Hueco>().combinacionObjeto != "" && this.gameObject.GetComponent<Hueco>() != inventario.GetComponent<Inventario>().huecoPrevioSeleccionado.GetComponent<Hueco>()){
                 GameObject objetoCombinado = Instantiate(Resources.Load<GameObject>("Combinados/" + combinacionObjeto));
@@ -77,7 +76,6 @@ public class Hueco : MonoBehaviour, IPointerClickHandler
           
         else{
             if (inventario.GetComponent<Inventario>().huecoPrevioSeleccionado != null)
-                
                 inventario.GetComponent<Inventario>().huecoPrevioSeleccionado = null;
                 colorObjeto.a = 0.5f;
                 seleccionado = true;
@@ -91,6 +89,8 @@ public class Hueco : MonoBehaviour, IPointerClickHandler
     }
 
     public void VaciarHueco(){
+        inventario.GetComponent<Inventario>().huecoPrevioSeleccionado = null;
+        inventario.GetComponent<Inventario>().huecoActualSeleccionado = null;
         propiedadesObjeto = Hueco.property.vacio;
         combinacionObjeto = "";
         transform.GetComponent<Image>().sprite = null;

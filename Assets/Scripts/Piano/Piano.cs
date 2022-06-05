@@ -10,6 +10,8 @@ public class Piano : MonoBehaviour
     public Minijuego minijuego;
     private int correctas = 0;
     private List<int> secuencia;
+    private float temporizador = 1;
+    private bool resuelto = false;
     void Start()
     {
         camara = Camera.main;
@@ -18,6 +20,15 @@ public class Piano : MonoBehaviour
 
     void Update()
     {
+        if(resuelto){
+            temporizador -= Time.deltaTime;
+            if  (temporizador<=0)
+                {
+                    minijuego.Resolver();
+                    resuelto=false;
+                }
+
+        }
         if(Input.GetMouseButtonDown(0)){
             Ray ray = camara.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
@@ -29,9 +40,7 @@ public class Piano : MonoBehaviour
                     if(estaTecla.numero == secuencia[correctas]){
                         if(correctas<secuencia.Count){
                             correctas++;
-                        }
-                        
-                        
+                        }  
                     }
                     else{
                         Reiniciar(estaTecla.numero);
@@ -39,8 +48,9 @@ public class Piano : MonoBehaviour
                 }
             }
             if(correctas==secuencia.Count){
-                minijuego.Resolver();
-
+                resuelto=true;
+                
+                
             }
         }
         

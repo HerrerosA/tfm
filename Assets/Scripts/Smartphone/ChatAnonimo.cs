@@ -25,6 +25,11 @@ public class ChatAnonimo : MonoBehaviour
         }
     }
     public void MostrarRespuestaNueva(){
+        StartCoroutine(nuevaRespuesta());
+    }
+    IEnumerator nuevaRespuesta(){
+        yield return new WaitForSeconds(3f);
         respuesta.SetActive(true);
+
     }
 }

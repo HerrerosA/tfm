@@ -59,7 +59,7 @@ public class PuzzleDeslizante : MonoBehaviour
         }
         int invertido;
         do{
-            for (int i = 0; i<=1; i++){
+            for (int i = 0; i<=14; i++){
                 if(piezas[i]!= null){
                     var ultimaposicion = piezas[i].posicionDestino;
                     int aleatorio = Random.Range(0,14);
