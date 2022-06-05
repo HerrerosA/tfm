@@ -8,6 +8,7 @@ using System.Globalization;
 
 public class Smartphone : MonoBehaviour
 {
+    
     public bool NoLeido{
         get { return noLeido; }
         set{
@@ -22,15 +23,16 @@ public class Smartphone : MonoBehaviour
     private GameObject telefono;
     private GameObject calendario;
     private GameObject portada;
-    private bool noLeido;
+    
+    private bool noLeido = true;
     public string fechaSeleccionada= "";
     [SerializeField] public GameObject[] notificaciones;
 
     System.DateTime myTime =  System.DateTime.Now;
-    public TextMeshProUGUI reloj;
     public TextMeshProUGUI fecha;
     public TextMeshProUGUI hora;
     // Start is called before the first frame update
+    
     void Awake()
     {
         portada = GameObject.Find("Home");

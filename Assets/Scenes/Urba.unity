@@ -3068,7 +3068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &425903363
 Transform:
   m_ObjectHideFlags: 0
@@ -6746,7 +6746,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae678ec4526836c4db8cacb8109a7127, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.044
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7048,11 +7048,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81004b84834d2754a87c6ce1c40427d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chats: {fileID: 2014207580}
+  lista_chats: {fileID: 1527893715}
+  chat_anonimo: {fileID: 650011633}
+  chat_mama: {fileID: 686179072}
+  mapa: {fileID: 808627993}
+  telefono: {fileID: 431310667}
+  calendario: {fileID: 95842042}
+  portada: {fileID: 1225960064}
   fechaSeleccionada: 
   notificaciones:
   - {fileID: 1861750031}
   - {fileID: 1973551607}
-  reloj: {fileID: 0}
   fecha: {fileID: 859045411}
   hora: {fileID: 1758662241}
 --- !u!222 &712833001
@@ -11014,7 +11021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1028556913
 Transform:
   m_ObjectHideFlags: 0
@@ -11714,7 +11721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1119656136
 Transform:
   m_ObjectHideFlags: 0
@@ -13517,7 +13524,7 @@ GameObject:
   - component: {fileID: 1295174156}
   - component: {fileID: 1295174155}
   m_Layer: 5
-  m_Name: Fondo
+  m_Name: FondoMovil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15826,7 +15833,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec3c3097c4d7d7c4d8e1aae73716000e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08a3774fad451644b8fb3969876e5dd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20091,7 +20098,7 @@ Canvas:
   m_GameObject: {fileID: 2049595636}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

@@ -66,15 +66,18 @@ public class BotonesCanvas : MonoBehaviour
         }
         else{
             fondoActual.FondoActual= "Bosque";
-        }   
+        }
+        
         IrAtras();
         IrAtras();
     }
     public void IrPlaya(){
+        
         if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="28/05/2022 14:00"){
             SceneManager.LoadScene("Fin");
             
         }
+        
         // Se tiene que poner la fecha correcta y el escenario correcto
         fondoActual.FondoActual= "Playa";   
         IrAtras();
