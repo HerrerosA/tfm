@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BotonesCanvas : MonoBehaviour
 {
@@ -58,7 +60,7 @@ public class BotonesCanvas : MonoBehaviour
         }
     }
     public void IrBosque(){
-        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="15/04/2022 17:32"){
+        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="15/04/2018 17:32"){
             fondoActual.FondoActual= "Buzones1";
             
         }
@@ -69,6 +71,10 @@ public class BotonesCanvas : MonoBehaviour
         IrAtras();
     }
     public void IrPlaya(){
+        if(movilEncendido.GetComponent<Smartphone>().fechaSeleccionada=="28/05/2022 14:00"){
+            SceneManager.LoadScene("Fin");
+            
+        }
         // Se tiene que poner la fecha correcta y el escenario correcto
         fondoActual.FondoActual= "Playa";   
         IrAtras();

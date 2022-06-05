@@ -11,6 +11,7 @@ public class GameplayManager : MonoBehaviour
     private int capaActual;
     private List<int> capasId = new List<int>();
     public Camera cam;
+
     void Start(){
         botonesCanvas = GameObject.Find("Canvas").GetComponent<BotonesCanvas>();
         smartphone = GameObject.Find("Smartphone").GetComponent<Smartphone>();
@@ -32,9 +33,10 @@ public class GameplayManager : MonoBehaviour
     
     void Update(){
         capaActual = LayerMask.NameToLayer(botonesCanvas.fondoActual.GetComponent<SpriteRenderer>().sprite.name.ToString());
+        int layerMask = 1 << capaActual;
         if (Input.GetMouseButtonUp(0)){
             Vector2 posicion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D choque = Physics2D.Raycast(posicion, Vector2.zero, 100);
+            RaycastHit2D choque = Physics2D.Raycast(posicion, Vector2.zero, Mathf.Infinity, layerMask);
             if(choque && choque.transform.tag == "Navegacion" && choque.transform.gameObject.layer == capaActual){
                 var destino = choque.transform.gameObject.name.ToString();
                 botonesCanvas.fondoActual.FondoActual = destino.Substring(2, destino.Length - 2);

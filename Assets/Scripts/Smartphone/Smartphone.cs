@@ -17,7 +17,9 @@ public class Smartphone : MonoBehaviour
     private GameObject chats;
     private GameObject lista_chats;
     private GameObject chat_anonimo;
+    private GameObject chat_mama;
     private GameObject mapa;
+    private GameObject telefono;
     private GameObject calendario;
     private GameObject portada;
     private bool noLeido;
@@ -35,12 +37,16 @@ public class Smartphone : MonoBehaviour
         chats = GameObject.Find("Chats");
         lista_chats = GameObject.Find("Lista");
         chat_anonimo = GameObject.Find("Chat_anonimo");
+        chat_mama = GameObject.Find("Chat_mama");
         mapa = GameObject.Find("Maps");
+        telefono = GameObject.Find("Telefono");
         calendario = GameObject.Find("Calendario");
         chats.SetActive(false);
         lista_chats.SetActive(false);
         chat_anonimo.SetActive(false);
+        chat_mama.SetActive(false);
         mapa.SetActive(false);
+        telefono.SetActive(false);
         calendario.SetActive(false);
         
     }
@@ -71,16 +77,27 @@ public class Smartphone : MonoBehaviour
         portada.SetActive(false);
         chats.SetActive(true);
         chat_anonimo.SetActive(false);
+        chat_mama.SetActive(false);
         lista_chats.SetActive(true);
     }
     public void AbrirChatAnonimo(){
         noLeido = false;
         chat_anonimo.SetActive(true);
+        chat_mama.SetActive(false);
+        lista_chats.SetActive(false);
+    }
+    public void AbrirChatMama(){
+        chat_anonimo.SetActive(false);
+        chat_mama.SetActive(true);
         lista_chats.SetActive(false);
     }
     public void AbrirMapa(){
         mapa.SetActive(true);
     }
+    public void AbrirTelefono(){
+        telefono.SetActive(true);
+    }
+    
     public void AbrirCalendario(){
         calendario.SetActive(true);
     }
@@ -96,12 +113,14 @@ public class Smartphone : MonoBehaviour
         chats.SetActive(false);
         lista_chats.SetActive(false);
         chat_anonimo.SetActive(false);
+        chat_mama.SetActive(false);
         mapa.SetActive(false);
+        telefono.SetActive(false);
         calendario.SetActive(false);
 
     }
     public void Atras(){
-        if(chat_anonimo.activeSelf){
+        if(chat_anonimo.activeSelf || chat_mama.activeSelf){
             MostrarListaChats();
         }
         else{
